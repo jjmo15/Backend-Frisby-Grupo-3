@@ -15,7 +15,7 @@ router
 
 .post('/api/v1/users', userController.saveUsers)
 
-.put('/api/v1/users', userController.updateUsers)
+.put('/api/v1/users/:identificacion', userController.updateUsers)
 
 .delete('/api/v1/users/:identificacion', userController.deleteUsers)
 

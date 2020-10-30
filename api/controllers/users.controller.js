@@ -33,9 +33,21 @@ const saveUsers = async(request,response)=>{
     response.send(responseJSON);
 
 };
-const updateUsers = (request,response)  =>{
-    let id =request.params.id;
-    response.send("EndPoint put Usuarios" + id);
+const updateUsers = async(request,response)  =>{
+    let identificacion =request.params.identificacion;
+    let sql = "UPDATE public.usuarios SET nombre=$1,apellido=$2,correo=$3,telefono=$4,ciudad=$5,descripcion=$6,direccion=$7 WHERE identificacion=$8;";
+    let body = request.body;
+    let values =[body.nombre,body.apellido,body.correo,body.telefono,body.ciudad,body.descripcion,body.direccion,identificacion]
+ 
+ let responseDB = await _servicePg.execute(sql,values);
+ let rowCount = response.rowCount;
+ let rows = responseDB.rows;
+ let responseJSON ={};
+ responseJSON.ok = true
+ responseJSON.message ='Usuario Actualizado '
+ responseJSON.info = body;
+ response.send(responseJSON);
+  
 };
 const deleteUsers = async(request,response) =>{
     const sql = 'DELETE FROM usuarios WHERE identificacion=$1';
