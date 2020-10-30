@@ -1,0 +1,17 @@
+{
+  "name": "taller",
+  "version": "1.0.0",
+  "description": "Proyecto backend Profe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Grupo 3",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "nodemon": "^2.0.6",
+    "pg": "^8.4.1"
+  }
+}
