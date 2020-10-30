@@ -44,7 +44,7 @@ const updateUsers = async(request,response)  =>{
  let rows = responseDB.rows;
  let responseJSON ={};
  responseJSON.ok = true
- responseJSON.message ='Usuario Actualizado '
+ responseJSON.message ='Usuario Actualizado'
  responseJSON.info = body;
  response.send(responseJSON);
   
