@@ -4,6 +4,8 @@ const _servicePg = new ServicePostgres()
 
 const getUsers =async (request,response)=>{
 
+    try{
+
     const sql = 'SELECT * FROM usuarios'
     let responseDB = await _servicePg.execute(sql);
     let rowCount = response.rowCount;
@@ -14,9 +16,20 @@ const getUsers =async (request,response)=>{
     responseJSON.info = rows
     responseJSON.metainfo = {total : rowCount}
     response.send(responseJSON);
+    }catch(error){
+
+        console.log(error);
+        let responseJSON={}
+        responseJSON.ok=false
+        responseJSON.message ="Error al visualizar los usuarios";
+        responseJSON.info =error
+        response.status(400).send(responseJSON);
+    }
 };
+
+
 const saveUsers = async(request,response)=>{
-    
+    try{
     let sql = " INSERT INTO public.usuarios(identificacion, nombre, apellido, correo, telefono, clave, ciudad, descripcion, direccion, hoja_de_vida)";
        sql += "VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10);";
 
@@ -31,9 +44,19 @@ const saveUsers = async(request,response)=>{
     responseJSON.message ='Usuario Creado'
     responseJSON.info = body;
     response.send(responseJSON);
+    }catch(error){
+
+        console.log(error);
+        let responseJSON={}
+        responseJSON.ok=false
+        responseJSON.message ="Error al guardar usuarios";
+        responseJSON.info =error
+        response.status(400).send(responseJSON);
+    }
 
 };
 const updateUsers = async(request,response)  =>{
+    try{
     let identificacion =request.params.identificacion;
     let sql = "UPDATE public.usuarios SET nombre=$1,apellido=$2,correo=$3,telefono=$4,ciudad=$5,descripcion=$6,direccion=$7 WHERE identificacion=$8;";
     let body = request.body;
@@ -47,9 +70,19 @@ const updateUsers = async(request,response)  =>{
  responseJSON.message ='Usuario Actualizado'
  responseJSON.info = body;
  response.send(responseJSON);
+    }catch(error){
+
+        console.log(error);
+        let responseJSON={}
+        responseJSON.ok=false
+        responseJSON.message ="Error al actualizar usuarios";
+        responseJSON.info =error
+        response.status(400).send(responseJSON);
+    }
   
 };
 const deleteUsers = async(request,response) =>{
+    try{
     const sql = 'DELETE FROM usuarios WHERE identificacion=$1';
     let identificacion =request.params.identificacion;
     let responseDB = await _servicePg.execute(sql,[identificacion]);
@@ -61,6 +94,15 @@ const deleteUsers = async(request,response) =>{
     responseJSON.info = [];
     responseJSON.metainfo = {total : rowCount}
     response.send(responseJSON);
+    }catch(error){
+
+        console.log(error);
+        let responseJSON={}
+        responseJSON.ok=false
+        responseJSON.message ="Error al eliminar un usuario";
+        responseJSON.info =error
+        response.status(400).send(responseJSON);
+    }
     
 };
 

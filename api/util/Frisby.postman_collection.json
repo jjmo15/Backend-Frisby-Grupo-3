@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "cfca7b17-4693-44a0-8456-e95f04ec27fb",
+		"name": "Frisby",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crud Aplicar Ofertas",
+			"item": [
+				{
+					"name": "Ver Ofertas Aplicadas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/v1/applyOffer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"applyOffer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Aplicacion Oferta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n            \"id\": 2,\r\n            \"usuario\": \"11\",\r\n            \"oferta\": 3\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/v1/applyOffer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"applyOffer"
+							]
+						},
+						"description": "Se puede agregar una nueva aplicacion de ofertas"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Aplicacion de Ofertas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/v1/applyOffer/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"applyOffer",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Aplicacion a Oferta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/v1/applyOffer/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"applyOffer",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Crud Usuarios",
+			"item": [
+				{
+					"name": "Obtener  Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/v1/users/identificador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"identificador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \"identificacion\": \"13555\",\r\n            \"nombre\": \"Daniel\",\r\n            \"apellido\": \"Bedoya\",\r\n            \"correo\": \"usua@gmail.com\",\r\n            \"telefono\": \"6663\",\r\n            \"clave\": \"77777\",\r\n            \"ciudad\": \"Medellin\",\r\n            \"descripcion\": \"Pruebas\",\r\n            \"direccion\": \"calle 27\",\r\n            \"hoja_de_vida\": \"pruebaY\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/v1/users/identificador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"identificador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/v1/users/identificacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"identificacion"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d857a01-cfdb-4115-a528-5a23f3cea7d5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "798ccf92-cbbe-4e72-9b8a-67e4846aadbf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Crud Ofertas",
+			"item": [
+				{
+					"name": "Agregar Oferta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n            \"id\": 4,\r\n            \"nombre\": \"Cajero\",\r\n            \"ciudad\": \"Medellin\",\r\n            \"requisitos\": \"Graduado del Colegio\",\r\n            \"descripcion\": \"Se necesita un empleado que nos colabore para ser cajero\",\r\n            \"cargo\": 3\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/v1/offer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"offer"
+							]
+						},
+						"description": "Este request permite agregar una oferta nueva en la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Oferta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\": 1,\r\n            \"nombre\": \"mantenimiento de alimentos\",\r\n            \"ciudad\": \"Envigado\",\r\n            \"requisitos\": \"Carrera universitaria\",\r\n            \"descripcion\": \"Se necesita un empleado que nos verifique el estado de los alimentos\",\r\n            \"cargo\": 1\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/v1/offer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"offer",
+								"1"
+							]
+						},
+						"description": "permite Actualizar una oferta ya agregada a la base de datos, para esto se le debe pasar el id correspondiente y actualizar los datos convenientemnte. Recordar usar la funcion JSON desde el body"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Oferta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/v1/offer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"offer",
+								"1"
+							]
+						},
+						"description": "Eliminar una oferta la cual inicialmente debemos pasar el id correspondiente."
+					},
+					"response": []
+				},
+				{
+					"name": "Ver Ofertas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/v1/offer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"v1",
+								"offer"
+							]
+						},
+						"description": "Este request cumple la funcion de mostrar las ofertas que se han creado en la base de datos incluyendo el nmcargo"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
