@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enfasis3
+  labels:
+    app: enfasis3
+  namespace: namespace-workflow-1684971913170
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enfasis3
+  template:
+    metadata:
+      labels:
+        app: enfasis3
+    spec:
+      containers:
+        - name: enfasis3
+          image: acrworkflow1684971913170.azurecr.io/image-workflow-1684971913170:latest
+          ports:
+            - containerPort: 3000
